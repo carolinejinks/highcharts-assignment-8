@@ -1,0 +1,30 @@
+* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+body {
+    background: #324172;
+    color: #fff;
+    font-size: 100%;
+    margin: 0;
+    padding: 30px 30px;
+    font-family: Dosis, Arial, sans-serif;
+
+}
+
+header {
+  color: #F1F305;
+  background:#536DBF;
+  padding: 30px 30px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #F2DB1F;
+  font-family: Codystar, cursive;
+}
+
+a { color: #F1F305; }
+a:hover { color: #536DBF; }

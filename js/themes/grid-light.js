@@ -17,7 +17,7 @@
          * (c) 2010-2016 Torstein Honsi
          *
          * License: www.highcharts.com/license
-         * 
+         *
          * Grid-light theme for Highcharts JS
          * @author Torstein Honsi
          */
@@ -32,7 +32,7 @@
         }, null, document.getElementsByTagName('head')[0]);
 
         Highcharts.theme = {
-            colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+            colors: ['#F0661D', '#f7a35c', '#EEDD4B', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
                 '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
             ],
             chart: {

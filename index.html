@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Amusement-Ride Related Injuries</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script>
+        <link href="styles/index.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Codystar" rel="stylesheet">
+        <script src="js/themes/grid-light.js"></script>
+</head>
+<body>
+<header>
+
+<h1>When Amusement Parks aren't So Amusing<h1>
+<h2>By Caroline Jinks<h2>
+
+</header>
+
+<p>Americans of all ages can appreciate the excitement offered by an amusement park. Whether it's the thrill of a roller coaster or the nostalgia of a carousel, the rides give guests a fun and memorable experience during their time in the park. But, what about when things go wrong?</p>
+
+<p>During the time period of 1993-2000, amusement-rides accounted for thousands of injuries, and the number of injuries increased significantly throughout these years. The age group most affected is young kids, and the areas the majority of the injuries occured are the trunk of the body and the neck. The following data sets will delve deeper into the dangers that come from both fixed and mobile amusement-rides, and how likely certain injuries are to occur in regards to parts of the body during this time period. The first is a basic column chart displaying the number of injuries for a specific age group. The separate columns represent what type of ride the injury occured on and and the total number of injuries. The second is a pie chart which shows the perentage of injuries occuring on specific areas of the body. These help visualize the dangers posed by these seemingly-enjoyable attractions. </p>
+
+<div id="container" style="width:100%; height:400px;"></div>
+
+<aside><p>Source: National Electronic Injury Surveillance System, U.S. Consumer Product Safety Commission, Table 4. <a href="https://www.cpsc.gov/s3fs-public/pdfs/amus2001.pdf">Estimated Non-Occupational Amusement Ride Injuries by Age Years 1993 through 2000</a></p></aside>
+
+<script>
+
+$(function() {
+  $('#container').highcharts({
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Amusement-Ride Related Injuries'
+    },
+    subtitle: {
+      text: 'Source: JournalistsResource.org'
+    },
+    xAxis: {
+      categories: [
+        '0-4',
+        '5-9',
+        '10-14',
+        '15-19',
+        '20-24',
+        '25-29',
+        '30-34',
+        '35-39',
+        '40-44',
+        '45-49',
+        '50-54',
+        '55-59',
+        '60-64',
+        '65-69',
+        '70-74',
+        '75-80',
+        '80-84',
+      ],
+      crosshair: true
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Number of Injuries'
+      }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} injuries</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+    },
+    plotOptions: {
+      column: {
+        pointPadding: 0.1,
+        borderWidth: 0
+      }
+    },
+    series: [{
+      name: 'Fixed',
+      data: [2143, 3676, 6385, 5344, 4583, 5197, 5179, 2741, 2462, 1671, 911, 371, 227, 269, 186, 0, 102]
+
+    }, {
+      name: 'Mobile',
+      data: [2024, 4620, 5376, 3706, 2304, 1518, 1261, 1158, 621, 689, 514, 397, 0, 52, 0, 0, 0]
+
+    }, {
+      name: 'Total',
+      data: [4168, 8296, 11761, 9050, 6887, 6715, 6441, 3899, 3082, 2359, 1425, 768, 227, 321, 186, 0, 102]
+
+    }]
+  });
+});
+
+</script>
+
+<div id="container2" style="width:100%; height:400px;"></div>
+
+<aside><p>Source: National Electronic Injury Surveillance System, U.S. Consumer Product Safety Commission, Table 7. <a href="https://www.cpsc.gov/s3fs-public/pdfs/amus2001.pdf">Estimated Non-Occupational Amusement Ride Injuries by Region of the Body Years 1993 through 2000</a></p></aside>
+
+<script>
+
+$(function() {
+  $('#container2').highcharts({
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: 'pie'
+    },
+    title: {
+      text: 'Location on the Body of Amusement Park Related Injuries'
+    },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: 'pointer',
+        dataLabels: {
+          enabled: true,
+          format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+          style: {
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+          }
+        }
+      }
+    },
+    series: [{
+      name: 'Percenatge of Injuries on this Body Part',
+      colorByPoint: true,
+      data: [{
+        name: '25-50% of body',
+        y: .51,
+      }, {
+        name: '>50% of body',
+        y: 1.56,
+        sliced: true,
+        selected: true
+      }, {
+        name: 'Foot Area',
+        y: 9.36,
+      }, {
+        name: 'Arm Area',
+        y: 8.64,
+      }, {
+        name: 'Hand Area',
+        y: 9.26,
+      }, {
+        name: 'Ear',
+        y: 1.22,
+      }, {
+        name: 'Eyeball',
+        y: 2.37,
+      }, {
+        name: 'Face',
+        y: 8.06,
+      }, {
+        name: 'Head',
+        y: 10.11,
+      }, {
+        name: 'Leg',
+        y: 8.32,
+      }, {
+        name: 'Mouth',
+        y: 1.39,
+      }, {
+        name: 'Neck',
+        y: 16.24,
+      }, {
+        name: 'Trunk',
+        y: 21.16
+      }, {
+        name: 'Pubic Area',
+        y: 0.2,
+      }, {
+        name: 'Not Recorded',
+        y: .23,
+      }]
+    }]
+  });
+});
+
+</script>
+</body>
+</html>
